@@ -3,6 +3,8 @@ layout: null
 permalink: /css/doc.css
 ---
 
+@import "variables";
+
 #man {
 	// Disable justification (see https://github.com/gbdev/rgbds-www/issues/13)
 	text-align: left;
@@ -30,5 +32,23 @@ permalink: /css/doc.css
 	td, th {
 		// Add horizontal spacing between columns
 		padding: 2px 7px 0;
+	}
+}
+
+@media screen and (max-width: $mobile-device) {
+	#man {
+		table.Bl-column {
+			// This is to utilize all available space better on mobile
+			margin-left: 0;
+			table-layout: fixed;
+			max-width: 200vw;
+
+			td, th {
+				// break basically everything if space is small
+				overflow-wrap: break-word;
+				// Force min-width in conjunction with word-break setting
+				min-width: 15vw;
+			}
+		}
 	}
 }
