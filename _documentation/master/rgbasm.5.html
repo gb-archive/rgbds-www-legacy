@@ -419,9 +419,16 @@ A great number of operators you can use in expressions are available (listed
     <td>Multiply/divide/modulo</td>
   </tr>
   <tr>
-    <td><a class="permalink" href="#_____"><code class="Li" id="_____">&lt;&lt;
-      &gt;&gt;</code></a></td>
-    <td>Shift left/right</td>
+    <td><a class="permalink" href="#__"><code class="Li" id="__">&lt;&lt;</code></a></td>
+    <td>Shift left</td>
+  </tr>
+  <tr>
+    <td><a class="permalink" href="#___2"><code class="Li" id="___2">&gt;&gt;</code></a></td>
+    <td>Signed shift right (sign-extension)</td>
+  </tr>
+  <tr>
+    <td><a class="permalink" href="#___"><code class="Li" id="___">&gt;&gt;&gt;</code></a></td>
+    <td>Unsigned shift right (zero-extension)</td>
   </tr>
   <tr>
     <td><a class="permalink" href="#&amp;__&amp;___"><code class="Li" id="&amp;__&amp;___">&amp;
@@ -1846,7 +1853,10 @@ DB 1,2,3,4,&quot;This is a string&quot;
 </div>
 <p class="Pp">Alternatively, you can use <code class="Ic">DW</code> to store a
     list of words (16-bit) or <code class="Ic">DL</code> to store a list of
-    double-words/longs (32-bit).</p>
+    double-words/longs (32-bit). Both of these write their data in little-endian
+    byte order; for example, &#x2018;<code class="Li">dw $CAFE</code>&#x2019; is
+    equivalent to &#x2018;<code class="Li">db $FE, $CA</code>&#x2019; and not
+    &#x2018;<code class="Li">db $CA, $FE</code>&#x2019;.</p>
 <p class="Pp">Strings are handled a little specially: they first undergo charmap
     conversion (see <a class="Sx" href="#Character_maps">Character maps</a>),
     then each resulting character is output individually. For example, under the
