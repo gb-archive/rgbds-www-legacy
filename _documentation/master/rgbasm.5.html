@@ -2379,7 +2379,7 @@ ENDC
   options while assembling</a></h2>
 <code class="Ic">OPT</code> can be used to change some of the options during
   assembling from within the source, instead of defining them on the
-  command-line.
+  command-line. (See <a class="Xr" href="rgbasm.1">rgbasm(1)</a>).
 <p class="Pp"><code class="Ic">OPT</code> takes a comma-separated list of
     options as its argument:</p>
 <div class="Bd Pp Bd-indent">
@@ -2395,12 +2395,13 @@ POPO
     LD [$FF88], A         ; optimized to use LDH by default
 </pre>
 </div>
-<p class="Pp">The options that OPT can modify are currently:
-    <code class="Cm">b</code>, <code class="Cm">g</code>,
-    <code class="Cm">p</code>, <code class="Cm">h</code>,
-    <code class="Cm">L</code>, and <code class="Cm">W</code>. The Boolean flag
-    options <code class="Cm">h</code> and <code class="Cm">L</code> can be
-    negated as &#x2018;<code class="Li">OPT !h</code>&#x2019; and
+<p class="Pp">The options that <code class="Ic">OPT</code> can modify are
+    currently: <code class="Cm">b</code>, <code class="Cm">g</code>,
+    <code class="Cm">p</code>, <code class="Cm">r</code>,
+    <code class="Cm">h</code>, <code class="Cm">L</code>, and
+    <code class="Cm">W</code>. The Boolean flag options
+    <code class="Cm">h</code> and <code class="Cm">L</code> can be negated as
+    &#x2018;<code class="Li">OPT !h</code>&#x2019; and
     &#x2018;<code class="Li">OPT !L</code>&#x2019; to act like omitting them
     from the command-line.</p>
 <p class="Pp"><code class="Ic">POPO</code> and <code class="Ic">PUSHO</code>
