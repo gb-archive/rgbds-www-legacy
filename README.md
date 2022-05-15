@@ -1,3 +1,9 @@
+## DEPRECATION NOTICE
+
+This repository is unmaintained and the software deprecated. It's here just for archival and historical purposes. [Please check the new version here](https://github.com/gbdev/rgbds-www). The stack has been migrated to Docusaurus.
+
+---
+
 
 # rgbds-www
 
